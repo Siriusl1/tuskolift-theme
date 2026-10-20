@@ -1,0 +1,1061 @@
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fafafa;
+            color: #1a1a1a;
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .index-banner {
+            flex: 1;
+            padding: 0;
+            width: 100%;
+            margin: 0;
+        }
+
+        .template-section {
+            width: min(calc(100% - 80px), 1440px);
+            margin: 0 auto;
+            padding: 110px 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 54px;
+        }
+
+        .section-kicker {
+            margin-bottom: 12px;
+            color: #344069;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            max-width: 820px;
+            color: #1a1a1a;
+            font-size: clamp(30px, 3.8vw, 52px);
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+        }
+
+        .section-heading p {
+            max-width: 460px;
+            color: #6b6b6b;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .text-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #344069;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 2px;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        .text-link:hover {
+            color: #E60012;
+            border-color: #E60012;
+        }
+
+        /* 
+           01 HERO —— 大气 / 视觉重点清晰 / 左文右图
+            */
+        .hero-section {
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            padding: 130px 0 80px;
+            background: #fafafa;
+            position: relative;
+        }
+
+        .hero-inner {
+            width: min(calc(100% - 80px), 1520px);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 44% 56%;
+            gap: 72px;
+            align-items: center;
+        }
+
+        .hero-copy {
+            max-width: 620px;
+        }
+
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+            color: #344069;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .hero-kicker::before {
+            content: "";
+            display: inline-block;
+            width: 36px;
+            height: 3px;
+            background: #E60012;
+        }
+
+        .hero-copy h1 {
+            margin-bottom: 28px;
+            color: #1a1a1a;
+            font-size: clamp(42px, 5vw, 76px);
+            font-weight: 800;
+            line-height: 1.02;
+            letter-spacing: -0.025em;
+        }
+
+        .hero-copy h1 .brand-highlight {
+            color: #E60012;
+        }
+
+        .hero-subtitle {
+            margin-bottom: 36px;
+            padding-left: 20px;
+            border-left: 3px solid #344069;
+            color: #4a4a4a;
+            font-size: clamp(17px, 1.5vw, 21px);
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .hero-points {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin: 0 0 42px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .hero-points li {
+            position: relative;
+            padding-left: 30px;
+            color: #2b2b2b;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+            letter-spacing: -0.005em;
+        }
+
+        .hero-points li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 12px;
+            height: 12px;
+            background: #E60012;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 19px 42px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            border: 2px solid #344069;
+            transition: all 0.25s ease;
+        }
+
+        .hero-btn-primary {
+            color: #ffffff;
+            background: #344069;
+            box-shadow: 0 12px 28px rgba(52, 64, 105, 0.22);
+        }
+        .hero-btn-primary:hover {
+            background: #E60012;
+            border-color: #E60012;
+            box-shadow: 0 12px 28px rgba(230, 0, 18, 0.28);
+        }
+
+        .hero-btn-outline {
+            color: #344069;
+            background: transparent;
+        }
+        .hero-btn-outline:hover {
+            color: #ffffff;
+            background: #344069;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 20px;
+            height: 100%;
+            min-height: 600px;
+        }
+
+        .hero-main-product {
+            grid-row: 1 / 4;
+            grid-column: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 32px;
+            background: #ffffff;
+            box-shadow: 0 30px 80px rgba(26, 26, 46, 0.10);
+            overflow: hidden;
+        }
+
+        .hero-main-product::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 6px;
+            height: 100%;
+            background: #E60012;
+        }
+
+        .hero-main-product img {
+            width: 100%;
+            max-height: 400px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .hero-main-product span {
+            margin-top: 26px;
+            color: #344069;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .hero-sub-products {
+            display: contents;
+        }
+
+        .hero-sub-product {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 18px;
+            background: #ffffff;
+            box-shadow: 0 16px 40px rgba(26, 26, 46, 0.08);
+            overflow: hidden;
+        }
+
+        .hero-sub-product img {
+            width: 100%;
+            max-height: 120px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-sub-product:hover img {
+            transform: scale(1.06);
+        }
+
+        .hero-sub-product span {
+            margin-top: 12px;
+            color: #344069;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        /* 
+           02 Our Product Range
+            */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            width: min(calc(100% - 80px), 1440px);
+            margin: 0 auto;
+            padding: 10px 0 20px;
+        }
+
+        .product-card {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            background: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            background: #ffffff;
+        }
+        .product-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+        .product-card:hover .product-image-wrapper img {
+            transform: scale(1.05);
+            filter: brightness(0.7);
+        }
+
+        .product-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 25px;
+            text-align: center;
+            color: #fff;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.28);
+            backdrop-filter: blur(2px);
+        }
+        .product-card:hover .product-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+        .product-overlay .title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        .product-overlay .desc {
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 92%;
+            opacity: 0.92;
+            margin-bottom: 24px;
+        }
+        .product-overlay .btn-link {
+            display: inline-block;
+            padding: 10px 30px;
+            background: #fff;
+            color: #1a1a2e;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            text-shadow: none;
+        }
+        .product-overlay .btn-link:hover {
+            background: #e63946;
+            color: #fff;
+            transform: scale(1.04);
+        }
+
+        /* 
+           03 Featured Lifting Solutions（4 卡）
+            */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .featured-card {
+            padding: 44px 36px;
+            background: #ffffff;
+            border: 1px solid #e8eaee;
+            text-decoration: none;
+            color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 360px;
+            transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .featured-card:hover {
+            border-color: #344069;
+            transform: translateY(-8px);
+            box-shadow: 0 24px 60px rgba(26, 26, 46, 0.10);
+        }
+
+        .featured-number {
+            font-size: 60px;
+            font-weight: 300;
+            line-height: 1;
+            color: #d9dce3;
+            letter-spacing: -0.05em;
+            margin-bottom: 56px;
+        }
+
+        .featured-card h3 {
+            margin-bottom: 14px;
+            font-size: 22px;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .featured-card p {
+            color: #6b6b6b;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 26px;
+        }
+
+        .featured-card span {
+            color: #344069;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+        }
+
+        /* 
+           04 Why Choose TUSKOLIFT（4 卡）
+            */
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: #d9dce3;
+            border: 1px solid #d9dce3;
+        }
+
+        .capability-card {
+            min-height: 300px;
+            padding: 40px 34px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .capability-card strong {
+            display: block;
+            margin-bottom: 70px;
+            color: #344069;
+            font-size: 12px;
+            letter-spacing: 0.16em;
+        }
+
+        .capability-card h3 {
+            margin-bottom: 14px;
+            font-size: 22px;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .capability-card p {
+            color: #6b6b6b;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* 
+           05 Industry Applications（Tabs）
+            */
+        .solution-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .solution-tab {
+            padding: 12px 22px;
+            border: 1px solid #c8ccd6;
+            color: #344069;
+            background: transparent;
+            font: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .solution-tab.is-active,
+        .solution-tab:hover {
+            color: #ffffff;
+            background: #344069;
+            border-color: #344069;
+        }
+
+        .solution-content {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            min-height: 340px;
+            background: #344069;
+            color: #ffffff;
+        }
+
+        .solution-number {
+            padding: 48px;
+            color: rgba(255, 255, 255, 0.42);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .solution-copy {
+            padding: 64px;
+            align-self: center;
+        }
+
+        .solution-copy h3 {
+            margin-bottom: 16px;
+            font-size: 36px;
+            line-height: 1.15;
+        }
+
+        .solution-copy p {
+            max-width: 660px;
+            color: rgba(255, 255, 255, 0.78);
+            line-height: 1.75;
+            font-size: 16px;
+        }
+
+        /* 
+           06 OEM / Custom Solutions
+            */
+        .oem-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: center;
+            padding: 110px 64px;
+            width: min(calc(100% - 80px), 1440px);
+            margin: 0 auto;
+        }
+
+        .oem-copy h3 {
+            margin-bottom: 20px;
+            font-size: clamp(30px, 3.2vw, 44px);
+            line-height: 1.1;
+            letter-spacing: -0.015em;
+        }
+
+        .oem-copy > p {
+            max-width: 500px;
+            color: #6b6b6b;
+            font-size: 16px;
+            line-height: 1.75;
+            margin-bottom: 30px;
+        }
+
+        .oem-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px 28px;
+            margin: 0 0 12px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .oem-features li {
+            position: relative;
+            padding-left: 24px;
+            color: #2b2b2b;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .oem-features li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 10px;
+            height: 10px;
+            background: #E60012;
+        }
+
+        .oem-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .oem-step {
+            padding: 32px 32px;
+            background: #ffffff;
+            border-left: 4px solid #344069;
+            box-shadow: 0 12px 40px rgba(26, 26, 46, 0.06);
+            transition: transform 0.25s ease;
+        }
+        .oem-step:hover {
+            transform: translateX(6px);
+        }
+
+        .oem-step strong {
+            display: block;
+            margin-bottom: 10px;
+            color: #344069;
+            font-size: 12px;
+            letter-spacing: 0.16em;
+        }
+
+        .oem-step h4 {
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        .oem-step p {
+            color: #6b6b6b;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* 
+           07 Factory & Quality（视频 + 数据）
+            */
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            align-items: stretch;
+            width: min(calc(100% - 80px), 1440px);
+            margin: 0 auto;
+            padding: 110px 0;
+        }
+
+        .about-video {
+            min-height: 520px;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .about-video video {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-copy {
+            padding: 20px 0 20px 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-copy h3 {
+            margin-bottom: 20px;
+            font-size: clamp(28px, 3vw, 40px);
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+        }
+
+        .about-copy > p {
+            color: #6b6b6b;
+            font-size: 16px;
+            line-height: 1.75;
+        }
+
+        .factory-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px 32px;
+            margin: 40px 0 0;
+        }
+
+        .factory-stat {
+            padding: 22px 0 0;
+            border-top: 2px solid #344069;
+        }
+
+        .factory-stat b {
+            display: block;
+            font-size: 38px;
+            line-height: 1;
+            color: #344069;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .factory-stat span {
+            display: block;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #6b6b6b;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* 
+           08 Global B2B Supply
+            */
+        .esg-section {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .esg-copy h3 {
+            margin-bottom: 22px;
+            font-size: clamp(28px, 3vw, 42px);
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+        }
+
+        .esg-copy p {
+            color: #6b6b6b;
+            font-size: 16px;
+            line-height: 1.75;
+            max-width: 540px;
+        }
+
+        .esg-markers {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .esg-marker {
+            min-height: 120px;
+            padding: 28px 30px;
+            background: #ffffff;
+            border-left: 4px solid #344069;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 12px 40px rgba(26, 26, 46, 0.06);
+            transition: transform 0.25s ease;
+        }
+        .esg-marker:hover {
+            transform: translateX(6px);
+        }
+
+        .esg-marker strong {
+            display: block;
+            margin-bottom: 12px;
+            color: #344069;
+            font-size: 12px;
+            letter-spacing: 0.16em;
+        }
+
+        .esg-marker span {
+            color: #4d5550;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* 
+           09 Final RFQ
+            */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 64px;
+            padding: 80px 72px;
+            color: #ffffff;
+            background: #344069;
+            width: min(calc(100% - 80px), 1440px);
+            margin: 0 auto 100px;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 22px;
+            font-size: clamp(32px, 3.2vw, 46px);
+            line-height: 1.1;
+            letter-spacing: -0.015em;
+        }
+
+        .contact-section > div > p {
+            color: rgba(255, 255, 255, 0.78);
+            line-height: 1.75;
+            font-size: 16px;
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            min-width: 0;
+            padding: 17px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+            font: inherit;
+            font-size: 15px;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.66);
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            grid-column: 1 / -1;
+            resize: vertical;
+        }
+
+        .contact-form .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .contact-form button {
+            grid-column: 1 / -1;
+            color: #344069;
+            background: #ffffff;
+            border-color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            padding: 18px;
+            font-size: 15px;
+        }
+
+        .contact-form button:hover {
+            background: #E60012;
+            color: #ffffff;
+            border-color: #E60012;
+        }
+
+        .form-status {
+            grid-column: 1 / -1;
+            min-height: 22px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        /* 
+           Footer
+            */
+        .site-footer {
+            background: #ffffff;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 32px 48px;
+            margin-top: auto;
+        }
+
+        .footer-inner {
+            max-width: 1920px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px 32px;
+        }
+
+        .footer-copy {
+            font-size: 14px;
+            color: #6b6b6b;
+        }
+
+        .footer-copy strong {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: #6b6b6b;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #344069;
+        }
+
+        /* 
+           响应式
+            */
+        @media (max-width: 1200px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 56px; }
+            .hero-copy { max-width: 100%; }
+            .hero-visual { min-height: 480px; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+            .featured-grid { grid-template-columns: repeat(2, 1fr); }
+            .capability-grid { grid-template-columns: repeat(2, 1fr); }
+            .capability-card strong { margin-bottom: 48px; }
+            .oem-section { grid-template-columns: 1fr; gap: 44px; padding: 90px 40px; }
+            .about-section { grid-template-columns: 1fr; padding: 90px 0; }
+            .about-copy { padding: 44px 0 0; }
+            .esg-section { grid-template-columns: 1fr; gap: 40px; }
+            .contact-section { grid-template-columns: 1fr; gap: 40px; padding: 64px 48px; }
+        }
+
+        /*
+         * 页头 / 导航 / 页脚的样式统一维护在 css/common.css。
+         *
+         * 这里原来整份复制了一遍导航规则（桌面版 + 移动版），与 common.css 里的
+         * 同名规则互相覆盖，是移动端「菜单按钮看不见」「点开一级后二级文字错位」的根源：
+         * 三份定义里 .nav-dropdown > a 的内边距、折叠箭头定位、.nav-dropdown-menu 的
+         * 复位值都不一致，谁最后加载谁生效，改哪一份都不敢保证生效。
+         * 现已全部移除，只保留首页自己的响应式规则。
+         */
+
+        @media (max-width: 768px) {
+            html, body { overflow-x: hidden; }
+
+            .hero-section { padding: 110px 0 60px; min-height: auto; }
+            .hero-inner { width: calc(100% - 40px); gap: 44px; }
+            .hero-kicker { font-size: 12px; margin-bottom: 20px; }
+            .hero-copy h1 { font-size: 34px; margin-bottom: 22px; }
+            .hero-subtitle { font-size: 15px; padding-left: 16px; margin-bottom: 28px; }
+            .hero-points { gap: 12px; margin-bottom: 32px; }
+            .hero-points li { font-size: 14px; padding-left: 24px; }
+            .hero-points li::before { width: 10px; height: 10px; top: 8px; }
+            .hero-btn { padding: 15px 28px; font-size: 14px; }
+
+            .hero-visual {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 14px;
+                min-height: auto;
+            }
+            .hero-main-product {
+                grid-row: auto;
+                grid-column: auto;
+                min-height: 260px;
+                padding: 28px 22px;
+            }
+            .hero-main-product img { max-height: 220px; }
+            .hero-main-product span { font-size: 11px; margin-top: 16px; }
+            .hero-sub-products {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+            .hero-sub-product { padding: 16px 10px; }
+            .hero-sub-product img { max-height: 70px; }
+            .hero-sub-product span { font-size: 10px; margin-top: 8px; }
+
+            .template-section {
+                width: calc(100% - 40px);
+                padding: 72px 0;
+            }
+            .section-heading { display: block; margin-bottom: 32px; }
+            .section-heading h2 { font-size: 28px; }
+            .section-heading p { margin-top: 18px; font-size: 15px; }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                width: calc(100% - 40px);
+                padding-bottom: 10px;
+            }
+            .product-overlay .title { font-size: 22px; }
+            .product-overlay .desc { font-size: 13px; max-width: 100%; }
+            .product-overlay { padding: 20px 18px; }
+
+            .featured-grid { grid-template-columns: 1fr; gap: 16px; }
+            .featured-card { min-height: 260px; padding: 34px 28px; }
+            .featured-number { font-size: 48px; margin-bottom: 34px; }
+
+            .capability-grid { grid-template-columns: 1fr; }
+            .capability-card { min-height: 210px; padding: 32px 26px; }
+            .capability-card strong { margin-bottom: 36px; }
+
+            .solution-content { grid-template-columns: 1fr; }
+            .solution-number { padding: 30px 30px 0; }
+            .solution-copy { padding: 32px; }
+            .solution-copy h3 { font-size: 26px; }
+
+            .oem-section {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 72px 24px;
+                width: calc(100% - 40px);
+            }
+            .oem-features { grid-template-columns: 1fr; }
+            .oem-step { padding: 26px 24px; }
+
+            .about-section {
+                grid-template-columns: 1fr;
+                width: calc(100% - 40px);
+                padding: 72px 0;
+            }
+            .about-video { min-height: 240px; }
+            .about-copy { padding: 36px 0 0; }
+            .factory-stat b { font-size: 30px; }
+
+            .esg-section { grid-template-columns: 1fr; gap: 32px; }
+            .esg-markers { grid-template-columns: 1fr; }
+            .esg-marker { padding: 24px 26px; }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 48px 28px;
+                width: calc(100% - 40px);
+                margin-bottom: 64px;
+            }
+            .contact-form { grid-template-columns: 1fr; gap: 14px; }
+            .contact-form .full-width { grid-column: auto; }
+
+            .site-footer { padding: 24px 20px; }
+            .footer-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .footer-links { gap: 18px; flex-wrap: wrap; }
+        }

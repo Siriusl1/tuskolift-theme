@@ -1,0 +1,51 @@
+# ============================================================================
+# TUSKOLIFT theme — git ignore
+# Scope: only the custom theme's *source*. No WordPress core, no uploads,
+# no database, no credentials. See docs/LAUNCH-BLOCKERS.md #14.
+#
+# Security note: docs/ and bin/ are intentionally NOT committed. docs/ holds the
+# full pre-launch security audit and bin/ holds internal tooling; the previous
+# hardening pass deliberately made both unreadable over HTTP. They are internal
+# deliverables, not part of the shippable theme, and are excluded from this
+# public repo by design. Remove these two lines only if you intentionally want
+# them in version control.
+# ============================================================================
+
+# --- Build / dependency output (not source) ---
+node_modules/
+vue-products/node_modules/
+dist-package/
+
+# --- Internal / non-shippable artifacts ---
+docs/
+bin/
+doc/
+
+# --- Local backups and exported snapshots (may contain data) ---
+*.zip
+*.sql
+*.bak
+*.orig
+tk-backups/
+
+# --- OS / editor noise ---
+.DS_Store
+Thumbs.db
+*.swo
+.vscode/
+.idea/
+*.log
+
+# --- Never commit credentials or environment files ---
+wp-config.php
+wp-config-sample.php
+.env
+.env.*
+*.local
+
+# --- WordPress junk that may appear at the theme root ---
+readme.html
+license.txt
+
+# vue-products build cache
+vue-products/dist/

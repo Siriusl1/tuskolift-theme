@@ -1,0 +1,673 @@
+/* =========================================================================
+   TUSKOLIFT — Blog 列表 / 文章详情
+   列表卡片本身沿用 common.css 的 .news-card / .grid-3，
+   这里只补卡片内链、文章详情页排版、分页与空状态。
+   ========================================================================= */
+
+/* ---------- 卡片内的链接（原来卡片没有 <a>） ---------- */
+
+.news-card h3 a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.news-card h3 a:hover {
+	color: #344069;
+}
+
+.news-card time {
+	display: block;
+	margin-bottom: 6px;
+	color: #6b6b6b;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+}
+
+.news-card h3 {
+	margin: 0 0 10px;
+	font-size: 21px;
+	line-height: 1.25;
+}
+
+.news-card p {
+	margin: 0 0 16px;
+	color: #6b6b6b;
+	font-size: 15px;
+	line-height: 1.7;
+}
+
+/* ---------- 列表页底部「查看全部分类」链接 ---------- */
+
+.tk-archive-link {
+	margin: 34px 0 0;
+}
+
+.tk-archive-link + .tk-archive-link {
+	margin-top: 10px;
+}
+
+/* ---------- 页面正文（blog 页编辑器内容） ----------
+   注意：内层选择器统一用 :where() 包裹，把权重降到最低，
+   这样嵌套在正文里的组件（如 .media-band）自身的样式不会被覆盖。 */
+
+.tk-page-content,
+.tk-post-content {
+	color: #444;
+	font-size: 17px;
+	line-height: 1.8;
+}
+
+.tk-post-content {
+	width: min(calc(100% - 48px), 760px);
+	margin: 0 auto;
+	padding: 70px 0 40px;
+	font-size: 18px;
+	line-height: 1.85;
+}
+
+.tk-page-content :where(h2),
+.tk-post-content :where(h2) {
+	margin: 44px 0 18px;
+	color: #171717;
+	font-size: clamp(26px, 3vw, 36px);
+	line-height: 1.15;
+	letter-spacing: -0.03em;
+}
+
+.tk-page-content :where(h3),
+.tk-post-content :where(h3) {
+	margin: 34px 0 14px;
+	color: #171717;
+	font-size: 22px;
+	line-height: 1.25;
+}
+
+.tk-page-content :where(p),
+.tk-post-content :where(p) {
+	margin: 0 0 20px;
+}
+
+.tk-page-content :where(img),
+.tk-post-content :where(img) {
+	max-width: 100%;
+	height: auto;
+}
+
+.tk-page-content :where(ul, ol),
+.tk-post-content :where(ul, ol) {
+	margin: 0 0 20px;
+	padding-left: 24px;
+}
+
+.tk-page-content :where(table),
+.tk-post-content :where(table) {
+	width: 100%;
+	margin: 0 0 26px;
+	border-collapse: collapse;
+	font-size: 15px;
+}
+
+.tk-page-content :where(th, td),
+.tk-post-content :where(th, td) {
+	padding: 12px 14px;
+	border: 1px solid #e5e5e5;
+	text-align: left;
+}
+
+.tk-page-content :where(th),
+.tk-post-content :where(th) {
+	background: #f7f7f5;
+	font-weight: 700;
+}
+
+/* ---------- 文章详情页 ---------- */
+
+.tk-post-hero {
+	padding: 150px 0 60px;
+	background: #f4f4f2;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.tk-post-hero-inner {
+	width: min(calc(100% - 48px), 900px);
+	margin: 0 auto;
+}
+
+.tk-post-breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 26px;
+	color: #6b6b6b;
+	font-size: 12px;
+	letter-spacing: 0.04em;
+}
+
+.tk-post-breadcrumb a {
+	color: #6b6b6b;
+	text-decoration: none;
+}
+
+.tk-post-breadcrumb a:hover {
+	color: #171717;
+}
+
+.tk-post-hero h1 {
+	margin: 0 0 22px;
+	font-size: clamp(34px, 4.6vw, 60px);
+	line-height: 1.05;
+	letter-spacing: -0.04em;
+}
+
+.tk-post-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 0;
+	color: #5f5f5f;
+	font-size: 13px;
+}
+
+.tk-post-thumb {
+	width: min(calc(100% - 48px), 1100px);
+	margin: 60px auto 0;
+}
+
+.tk-post-thumb img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.tk-post-content > *:first-child {
+	margin-top: 0;
+}
+
+.tk-post-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	width: min(calc(100% - 48px), 760px);
+	margin: 0 auto 50px;
+}
+
+.tk-post-tags a {
+	padding: 7px 12px;
+	border: 1px solid #d7d7d7;
+	color: #555;
+	font-size: 11px;
+	letter-spacing: 0.05em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.tk-post-tags a:hover {
+	border-color: #171717;
+	color: #171717;
+}
+
+/* 上下篇导航 */
+
+.tk-post-footer {
+	width: min(calc(100% - 48px), 900px);
+	margin: 0 auto 70px;
+}
+
+.tk-post-footer .post-navigation .nav-links {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 20px;
+	padding-top: 22px;
+	border-top: 1px solid #171717;
+}
+
+.tk-post-footer .nav-previous,
+.tk-post-footer .nav-next {
+	min-width: 0;
+	font-size: 16px;
+	line-height: 1.35;
+}
+
+.tk-post-footer .nav-next {
+	text-align: right;
+}
+
+.tk-post-footer a {
+	color: #171717;
+	text-decoration: none;
+}
+
+.tk-post-footer a:hover {
+	color: #344069;
+}
+
+.tk-nav-label {
+	display: block;
+	margin-bottom: 6px;
+	color: #6b6b6b;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.tk-nav-title {
+	font-weight: 600;
+}
+
+/* 同分类文章 */
+
+.tk-related {
+	width: min(calc(100% - 48px), 1200px);
+	margin: 0 auto;
+	padding: 30px 0 90px;
+}
+
+.tk-related-title {
+	margin: 0 0 34px;
+	padding-top: 18px;
+	border-top: 1px solid #171717;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+}
+
+/* ---------- 归档分页 ---------- */
+
+.pagination,
+.navigation.pagination {
+	margin-top: 46px;
+}
+
+.navigation.pagination .nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+}
+
+.navigation.pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 42px;
+	min-height: 42px;
+	padding: 0 14px;
+	border: 1px solid #e0e0e0;
+	color: #444;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+.navigation.pagination .page-numbers.current {
+	border-color: #171717;
+	background: #171717;
+	color: #fff;
+}
+
+.navigation.pagination a.page-numbers:hover {
+	border-color: #171717;
+	color: #171717;
+}
+
+/* =========================================================================
+   文章评论
+   Underscores 原本没有给评论区域任何样式，这里按站点的排版体系补齐。
+   评论表单的文案已在 comments.php 里显式写成英文。
+   ========================================================================= */
+
+#comments {
+	width: min(calc(100% - 48px), 760px);
+	margin: 0 auto;
+	padding: 0 0 80px;
+}
+
+.comments-title,
+.comment-reply-title {
+	margin: 0 0 26px;
+	padding-top: 18px;
+	border-top: 1px solid #171717;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+}
+
+.comment-list {
+	margin: 0 0 46px;
+	padding: 0;
+	list-style: none;
+}
+
+.comment-list ol.children {
+	margin: 22px 0 0 26px;
+	padding: 0;
+	list-style: none;
+}
+
+.comment-body {
+	padding: 22px 0;
+	border-bottom: 1px solid #ececec;
+}
+
+.comment-author {
+	font-weight: 700;
+	color: #171717;
+}
+
+.comment-metadata {
+	margin: 6px 0 12px;
+	color: #999;
+	font-size: 12px;
+}
+
+.comment-metadata a {
+	color: #999;
+	text-decoration: none;
+}
+
+.comment-content {
+	color: #555;
+	line-height: 1.75;
+}
+
+.comment-content p {
+	margin: 0 0 12px;
+}
+
+.reply a {
+	color: #344069;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+/* 评论表单 */
+
+.comment-respond {
+	margin-top: 10px;
+}
+
+.comment-form p {
+	margin: 0 0 16px;
+}
+
+.comment-form label {
+	display: block;
+	margin-bottom: 6px;
+	color: #171717;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.comment-form .required {
+	color: #c92a2a;
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea {
+	width: 100%;
+	padding: 13px 14px;
+	border: 1px solid #dcdcdc;
+	border-radius: 0;
+	background: #fbfbfb;
+	color: #1a1a1a;
+	font: inherit;
+	font-size: 15px;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+	border-color: #344069;
+	background: #fff;
+}
+
+.comment-form textarea {
+	min-height: 130px;
+	resize: vertical;
+}
+
+.comment-notes,
+.comment-form-cookies-consent label {
+	color: #6b6b6b;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.6;
+}
+
+.comment-form-cookies-consent {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+}
+
+.comment-form-cookies-consent input {
+	margin-top: 3px;
+}
+
+.comment-form-cookies-consent label {
+	margin-bottom: 0;
+}
+
+.form-submit .submit {
+	padding: 15px 34px;
+	border: 0;
+	border-radius: 0;
+	background: #171717;
+	color: #fff;
+	font: inherit;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	cursor: pointer;
+}
+
+.form-submit .submit:hover {
+	background: #344069;
+}
+
+/* ---------- 响应式 ---------- */
+
+@media (max-width: 700px) {
+	.tk-post-hero {
+		padding: 120px 0 45px;
+	}
+
+	.tk-post-content {
+		font-size: 16px;
+		padding-top: 50px;
+	}
+
+	.tk-post-footer .post-navigation .nav-links {
+		grid-template-columns: 1fr;
+	}
+
+	.tk-post-footer .nav-next {
+		text-align: left;
+	}
+}
+
+/* =========================================================================
+   选题建议区块（/blog/ 的 #suggest-a-topic）
+   -------------------------------------------------------------------------
+   内容由页面 #20 的 post_content 输出（见 docs/PAGE-MAP.md），这里只负责排版。
+   左：说明与承诺；右：WPForms 表单。窄屏改单列。
+   ========================================================================= */
+
+.topic-request-section {
+	padding: 64px 0;
+	background: var(--soft, #f3f5f6);
+}
+
+.topic-request-inner {
+	display: grid;
+	grid-template-columns: 1fr 460px;
+	gap: 56px;
+	align-items: start;
+	width: min(calc(100% - 48px), 1200px);
+	margin: 0 auto;
+}
+
+.topic-request-copy .eyebrow {
+	margin: 0 0 14px;
+	color: var(--accent, #344069);
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+}
+
+.topic-request-copy h2 {
+	margin: 0 0 20px;
+	color: var(--ink, #18202a);
+	font-size: clamp(28px, 3.4vw, 42px);
+	line-height: 1.2;
+}
+
+.topic-request-copy p {
+	margin: 0 0 18px;
+	max-width: 62ch;
+	color: var(--muted, #66717d);
+	line-height: 1.75;
+}
+
+.topic-request-points {
+	margin: 24px 0;
+	padding: 0;
+	list-style: none;
+}
+
+.topic-request-points li {
+	position: relative;
+	margin: 0 0 14px;
+	padding-left: 22px;
+	color: var(--muted, #66717d);
+	line-height: 1.7;
+}
+
+.topic-request-points li::before {
+	content: "";
+	position: absolute;
+	top: .62em;
+	left: 0;
+	width: 8px;
+	height: 8px;
+	background: var(--accent, #344069);
+}
+
+.topic-request-points strong {
+	color: var(--ink, #18202a);
+}
+
+.topic-request-alt {
+	margin-top: 26px;
+	padding-top: 20px;
+	border-top: 1px solid var(--line, #dce1e6);
+	font-size: 15px;
+}
+
+/* ---------- 表单卡片 ---------- */
+
+.topic-request-form {
+	padding: 32px;
+	background: #ffffff;
+	border: 1px solid var(--line, #dce1e6);
+}
+
+.topic-request-form h3 {
+	margin: 0 0 6px;
+	color: var(--ink, #18202a);
+	font-size: 22px;
+}
+
+.topic-request-form-hint {
+	margin: 0 0 22px;
+	color: var(--muted, #66717d);
+	font-size: 13px;
+}
+
+/* WPForms 在这个区块里是浅色底，覆盖 common.css 里为深色底写的表单变量 */
+.topic-request-form #wpforms-1119 {
+	--wpforms-field-background-color: #ffffff;
+	--wpforms-field-border-color: #cfd6dd;
+	--wpforms-field-text-color: #18202a;
+	--wpforms-field-border-radius: 0px;
+	--wpforms-label-color: #18202a;
+	--wpforms-label-sublabel-color: #66717d;
+	--wpforms-label-error-color: #b32d2e;
+	--wpforms-button-background-color: #344069;
+	--wpforms-button-text-color: #ffffff;
+	--wpforms-button-border-radius: 0px;
+	--wpforms-field-size-padding-h: 13px;
+	--wpforms-field-size-font-size: 15px;
+}
+
+.topic-request-form .wpforms-field {
+	padding-top: 0;
+	padding-bottom: 16px;
+}
+
+.topic-request-form .wpforms-field input:not([type="checkbox"]):not([type="radio"]),
+.topic-request-form .wpforms-field select,
+.topic-request-form .wpforms-field textarea {
+	width: 100%;
+}
+
+.topic-request-form .wpforms-field textarea {
+	min-height: 96px;
+	resize: vertical;
+}
+
+.topic-request-form .wpforms-submit-container {
+	padding-top: 6px;
+}
+
+.topic-request-form .wpforms-submit {
+	width: 100%;
+	padding: 14px 20px;
+	border: 0;
+	color: #ffffff;
+	background: var(--accent, #344069);
+	cursor: pointer;
+	font-weight: 750;
+	letter-spacing: .04em;
+}
+
+.topic-request-form .wpforms-submit:hover {
+	background: var(--ink, #18202a);
+}
+
+.topic-request-form .wpforms-confirmation-container-full {
+	padding: 20px;
+	color: var(--ink, #18202a);
+	background: #f1f8f2;
+	border-left: 4px solid #007017;
+}
+
+.topic-request-form .wpforms-confirmation-container-full h3 {
+	font-size: 18px;
+}
+
+/* ---------- 窄屏 ---------- */
+
+@media (max-width: 900px) {
+	.topic-request-inner {
+		grid-template-columns: 1fr;
+		gap: 36px;
+	}
+
+	.topic-request-section {
+		padding: 44px 0;
+	}
+
+	.topic-request-form {
+		padding: 24px;
+	}
+}
